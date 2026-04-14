@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* BASE */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* =========================
+   NEON BACKGROUND
+========================= */
+
+.neon-glow-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.22),
+    transparent 60%
+  );
+  filter: blur(90px);
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.85; }
+}
+
+/* =========================
+   NEON BUTTON (ENERGIA VIVA)
+========================= */
+
+.neon-button {
+  position: relative;
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  color: white;
+  border-radius: 9999px;
+  padding: 14px 32px;
+  font-weight: 600;
+  box-shadow: 0 0 25px rgba(59,130,246,0.35);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+/* glow vivo */
+.neon-button::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(59,130,246,0.9), transparent 70%);
+  filter: blur(12px);
+  opacity: 0.75;
+  animation: energy 2.5s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes energy {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+/* hover premium */
+.neon-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 45px rgba(59,130,246,0.6);
+}
+
+/* =========================
+   CHART ANIMATION
+========================= */
+
+.chart-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 2s ease forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.chart-fill {
+  animation: fadeFill 2.5s ease forwards;
+}
+
+@keyframes fadeFill {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
