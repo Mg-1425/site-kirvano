@@ -143,10 +143,10 @@ export function Footer() {
             {/* Copyright */}
             <div className="text-center lg:text-right">
               <p className="text-[#555] text-sm">
-                © 2025 Kirvano. Todos os direitos reservados.
+                © 2026 Kirvano. Todos os direitos reservados.
               </p>
               <p className="text-[#555] text-xs mt-1">
-                Kirvano Pagamentos LTDA · CNPJ: XX.XXX.XXX/0001-XX
+                Kirvano Pagamentos LTDA · CNPJ: 48.582.146/0001-19
               </p>
             </div>
           </div>
